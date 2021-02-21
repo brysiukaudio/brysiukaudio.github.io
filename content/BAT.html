@@ -1,0 +1,23 @@
+﻿<h1 class="contentheader"><span style="color: #000">Brysiuk Audio</span> Technical</h1>
+<a href="/wip/content/BAT/Dec814.html">Dec 8, 14</a>
+<a href="/wip/content/BAT/Page2.html">Page2</a>
+<div id = "BATinfo"> </div>
+
+
+
+
+<script>
+        var i = 0;
+        $('#BATpage div#BATinfo').fadeOut(0).load("content/BAT/Dec814.html").fadeIn(0);
+		$('a').bind('click', function(e) {           
+			e.preventDefault();
+			var url = $(this).attr('href');
+			$('#BATpage div#BATinfo').fadeOut('slow', function () {
+			    $('#BATpage div#BATinfo').load(url, function () {
+			        $('#BATpage div#BATinfo').fadeIn('slow');
+			    });
+			});
+			 // load the html response into a DOM element
+			 // stop the browser from following the link
+		});
+</script>
